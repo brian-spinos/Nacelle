@@ -23,6 +23,7 @@ const SearchHeader = ({
           >
             <input
               type="text"
+              data-testid="search-input"
               value={query}
               onChange={(e) => {
                 handleSearchByQuery(e.target.value);
@@ -36,6 +37,7 @@ const SearchHeader = ({
                 handleSearchByQuery(query);
               }}
               type="button"
+              data-testid="search-button"
               className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Search
@@ -46,6 +48,7 @@ const SearchHeader = ({
                 clearQuery();
               }}
               type="button"
+              data-testid="clear-button"
               className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Clear

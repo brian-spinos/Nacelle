@@ -55,7 +55,10 @@ const NacelleNotification = () => {
 
   return (
     <>
-      <h1 className="ml-10 text-4xl font-extrabold text-gray-700">
+      <h1
+        className="ml-10 text-4xl font-extrabold text-gray-700"
+        data-testid="notifications-title"
+      >
         Notifications
       </h1>
       <div className="m-10 overflow-x-auto shadow-md sm:rounded-lg">
