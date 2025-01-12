@@ -1,5 +1,7 @@
 # Setup
 
+// using node v22.13.0, and react 18.3.1
+
 $ npm install
 $ npm run dev
 $ npm test
@@ -16,3 +18,4 @@ $ npm test
 - Typescript
 - Vitest
 - Tailwind
+- Redux-Toolkit
