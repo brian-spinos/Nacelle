@@ -24,8 +24,10 @@ export const fetchData = createAsyncThunk<SearchResult[], string>(
 
     if (query.trim() === "ERROR") throw new Error("Fake API Error");
 
-    const filteredSearchData = searchData.filter((item) =>
-      item.title.toLowerCase().includes(query.toLowerCase())
+    const filteredSearchData = searchData.filter(
+      (item) =>
+        item.title.toLowerCase().includes(query.toLowerCase()) ||
+        item.category.toLowerCase().includes(query.toLowerCase())
     );
 
     return filteredSearchData;
@@ -56,26 +58,17 @@ const searchSlice = createSlice({
       state.results = [];
       state.error = "";
     },
-    search: (state, action) => {
-      const searchData = state.searchData;
-      const query = action.payload;
-      state.query = query;
-
-      const filteredSearchData = searchData.filter((item) =>
-        item.title.toLowerCase().includes(query.toLowerCase())
-      );
-
-      state.results = filteredSearchData;
-    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
         state.isLoading = true;
+        state.error = "";
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.results = action.payload;
+        state.error = "";
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.isLoading = false;
@@ -84,5 +77,5 @@ const searchSlice = createSlice({
   },
 });
 
-export const { search, setQuery, clearQuery } = searchSlice.actions;
+export const { setQuery, clearQuery } = searchSlice.actions;
 export default searchSlice.reducer;

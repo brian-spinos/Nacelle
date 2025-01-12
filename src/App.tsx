@@ -5,9 +5,13 @@ import store from "./main/store/store";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import NacelleSearch from "./main/components/search/NacelleSearch";
+import NacelleNotification from "./main/components/notification/NacelleNotification";
 
-const HomePage = () => <div>Home</div>;
-const NacelleNotification = () => <div>NacelleNotification</div>;
+const HomePage = () => (
+  <div>
+    <h1 className="ml-10 text-1xl font-extrabold text-gray-500">Home</h1>
+  </div>
+);
 
 function App() {
   return (

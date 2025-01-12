@@ -16,7 +16,9 @@ const SearchHeader = ({
       <div className="flex flex-col space-x-2-- max-w-lg w-full bg-white rounded-lg shadow-md p-4">
         <div>
           <form
-            onSubmit={() => {}}
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
             className="flex space-x-2 max-w-lg w-full p-4"
           >
             <input

@@ -34,7 +34,6 @@ const NacelleSearch = ({ onSearch, placeholder }: SearchProps) => {
    */
   const SearchDebounced = useCallback(
     Util.debounce((value: string) => {
-      // dispatch(search(value));
       dispatch(fetchData(value));
     }, 300),
     []

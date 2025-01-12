@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Progress bar for notifications */
+@keyframes progress-bar {
+  to {
+    width: 100%;
+  }
+  from {
+    width: 0%;
+  }
+}

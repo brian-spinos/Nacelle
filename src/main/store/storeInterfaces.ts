@@ -18,3 +18,23 @@ export enum CATEGORIES {
   VEGETABLES = "vegetables",
   SNACK = "snack",
 }
+
+// Notifications
+
+export enum NotificationTypes {
+  SUCCESS = "success",
+  ERROR = "error",
+  INFO = "info",
+}
+
+export type notificationType = "success" | "error" | "info";
+
+export interface Notification {
+  id: string;
+  message: string;
+  type: notificationType;
+}
+
+export interface NotificationState {
+  notifications: Notification[];
+}

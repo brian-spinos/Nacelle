@@ -38,7 +38,11 @@ const SearchResults = ({
         <Loader />
       ) : (
         <>
-          {searchResults.length === 0 && !isLoading && <p>Empty List</p>}
+          {searchResults.length === 0 && !isLoading && (
+            <h1 className="text-1xl font-extrabold text-gray-500">
+              Empty List
+            </h1>
+          )}
 
           {searchResults.length !== 0 && (
             <FadeIn>
